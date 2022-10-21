@@ -57,17 +57,17 @@ console.log('Searching for Foster The People. Expecting no matches.', findByArti
 // Create search function to compare both the Artist and Year of an input object to every album in my colletion looking for
 // matches on both items
 function search(searchCriteria){
+    if(searchCriteria == null){
+        return collection;
+    } else{
     let results = [];
     for(let i =0; i<collection.length;i++){
         if(searchCriteria.Artist == collection[i].Artist && searchCriteria.Year == collection[i].Year){
             results.push(collection[i]);
         }
     }
-    if(searchCriteria == null){
-        return collection;
-    } else {
-        return results;
-    }
+    return results;
+    } 
 }
 
 // Create object for search criteria
@@ -85,3 +85,4 @@ const metallica = {
 // Test search function
 console.log('Testing search function for Ray Charles in 1957. Expecting empty array.', search(rayCharles));
 console.log('Testing search function for Metallica in 1986. Expecting 1 result.', search(metallica));
+console.log('Testing search function for null input. Expecting entire collection returned.', search());
