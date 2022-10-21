@@ -22,7 +22,16 @@ console.log('Adding first album:', addToCollection('Rust in Peace','Megadeth', '
 console.log('Adding first album:', addToCollection('The Mantle','Agalloch', '2002'));
 console.log('Adding first album:', addToCollection('Details','Frou Frou', '2002'));
 
-// log my collection to the console
+// Log my collection to the console
 console.log('My record collection:', collection);
 
+// Function to take in an array of album objects and publish album information for each item to the console
+function showCollection(discs){
+    console.log('There are', discs.length,'items in this collection.');
+    for(let disc of discs){
+        console.log(disc.Title,'by',disc.Artist +', published in',disc.Year);
+    }
+}
 
+// Testing showCollection with my collection
+showCollection(collection);
