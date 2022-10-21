@@ -40,7 +40,7 @@ showCollection(collection);
 // Function to check if any objects in my collection are by a given artist
 function findByArtist(artist){
     let searchResults = [];
-    for(record of collection){
+    for(let record of collection){
         if(record.Artist == artist){
             searchResults.push(record);
         }
@@ -48,7 +48,40 @@ function findByArtist(artist){
     return searchResults;
 }
 
-// Testing the findByArtist function for an artist with 2 matchs, 1 match and 0 matches.
+// Testing the findByArtist function for an artist with 2 matchs, 1 match and 0 matches
 console.log('Searching for Metallica. Expecting two matches.', findByArtist('Metallica'));
 console.log('Searching for Frou Frou. Expecting one match.', findByArtist('Frou Frou'));
 console.log('Searching for Foster The People. Expecting no matches.', findByArtist('Foster The People'));
+
+//Stretch goals
+// Create search function to compare both the Artist and Year of an input object to every album in my colletion looking for
+// matches on both items
+function search(searchCriteria){
+    let results = [];
+    for(let i =0; i<collection.length;i++){
+        if(searchCriteria.Artist == collection[i].Artist && searchCriteria.Year == collection[i].Year){
+            results.push(collection[i]);
+        }
+    }
+    if(searchCriteria == null){
+        return collection;
+    } else {
+        return results;
+    }
+}
+
+// Create object for search criteria
+const rayCharles = {
+    Artist: 'Ray Charles',
+    Year: '1957'
+}
+
+// Create another object for search criteria
+const metallica = {
+    Artist: 'Metallica',
+    Year: '1986'
+}
+
+// Test search function
+console.log('Testing search function for Ray Charles in 1957. Expecting empty array.', search(rayCharles));
+console.log('Testing search function for Metallica in 1986. Expecting 1 result.', search(metallica));
