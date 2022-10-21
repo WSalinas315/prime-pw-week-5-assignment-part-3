@@ -31,7 +31,24 @@ function showCollection(discs){
     for(let disc of discs){
         console.log(disc.Title,'by',disc.Artist +', published in',disc.Year);
     }
+    return true;
 }
 
 // Testing showCollection with my collection
 showCollection(collection);
+
+// Function to check if any objects in my collection are by a given artist
+function findByArtist(artist){
+    let searchResults = [];
+    for(record of collection){
+        if(record.Artist == artist){
+            searchResults.push(record);
+        }
+    }
+    return searchResults;
+}
+
+// Testing the findByArtist function for an artist with 2 matchs, 1 match and 0 matches.
+console.log('Searching for Metallica. Expecting two matches.', findByArtist('Metallica'));
+console.log('Searching for Frou Frou. Expecting one match.', findByArtist('Frou Frou'));
+console.log('Searching for Foster The People. Expecting no matches.', findByArtist('Foster The People'));
