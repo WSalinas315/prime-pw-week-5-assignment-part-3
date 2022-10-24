@@ -39,6 +39,10 @@ function showCollection(discs){
     console.log('There are', discs.length,'items in this collection.');
     for(let disc of discs){
         console.log(disc.Title,'by',disc.Artist +', published in',disc.Year);
+        // For loop to print out the track names and durations for each album
+        for(let i=0; i<disc.Tracks.length;i++){
+            console.log(i+1 +'.', disc.Tracks[i].Name +':', disc.Tracks[i].Duration);
+        }
     }
     return true;
 }
@@ -71,7 +75,7 @@ function search(searchCriteria){
     } else{
     let results = [];
     for(let i =0; i<collection.length;i++){
-        if(searchCriteria.Artist == collection[i].Artist && searchCriteria.Year == collection[i].Year){
+        if(searchCriteria.Artist == collection[i].Artist && searchCriteria.Year == collection[i].Year && searchCriteria.Duration == collection[i].Duration){
             results.push(collection[i]);
         }
     }
@@ -82,16 +86,26 @@ function search(searchCriteria){
 // Create object for search criteria
 const rayCharles = {
     Artist: 'Ray Charles',
-    Year: '1957'
+    Year: '1957',
+    Duration: '3:42'
 }
 
-// Create another object for search criteria
+// Create an object for search criteria
 const metallica = {
     Artist: 'Metallica',
-    Year: '1986'
+    Year: '1986',
+    Duration: '8:36'
+}
+
+// Create an object for search criteria
+const megadeth = {
+    Artist: 'Megadeth',
+    Year: '1990',
+    Duration: '19:59'
 }
 
 // Test search function
 console.log('Testing search function for Ray Charles in 1957. Expecting empty array.', search(rayCharles));
 console.log('Testing search function for Metallica in 1986. Expecting 1 result.', search(metallica));
 console.log('Testing search function for null input. Expecting entire collection returned.', search());
+console.log('Testing search function for Megadeth in 1990 with a duration of 19:59. Expecting empty array.', search(megadeth));
