@@ -12,23 +12,24 @@ let tM = [{Name:'A Celebration For The Death Of Man...',Duration:'2:24'},{Name:'
 let details = [{Name:'Let Go',Duration:'4:13'},{Name:'Breathe In',Duration:'4:27'},{Name:`It's Good To Be In Love`,Duration:'4:39'},{Name:'Must Be Dreaming',Duration:'4:01'},{Name:'Psychobabble',Duration:'5:33'},{Name:'Only Got One',Duration:'4:09'},{Name:'Shh',Duration:'5:34'},{Name:'Hear Me Out',Duration:'4:19'},{Name:'Maddening Sound',Duration:'3:37'},{Name:'Flicks',Duration:'3:58'},{Name:'The Dumbing Down Of Love',Duration:'4:44'}];
 
 // Function to add objects with title, artist and year published to the existing collection array
-function addToCollection(title, artist, yearPublished){
+function addToCollection(title, artist, yearPublished, trackList){
     let album = {
         Title: title,
         Artist: artist,
-        Year: yearPublished
+        Year: yearPublished,
+        Tracks: trackList
     }
     collection.push(album);
     return album;
 }
 
 // Adding 6 albums to my collection
-console.log('Adding first album:', addToCollection('Master of Puppets','Metallica', '1986'));
-console.log('Adding first album:', addToCollection('Sour','Olivia Rodrigo', '2021'));
-console.log('Adding first album:', addToCollection(`Kill'em All`,'Metallica', '1983'));
-console.log('Adding first album:', addToCollection('Rust in Peace','Megadeth', '1990'));
-console.log('Adding first album:', addToCollection('The Mantle','Agalloch', '2002'));
-console.log('Adding first album:', addToCollection('Details','Frou Frou', '2002'));
+console.log('Adding first album:', addToCollection('Master of Puppets','Metallica','1986',mOP));
+console.log('Adding first album:', addToCollection('Sour','Olivia Rodrigo','2021',sour));
+console.log('Adding first album:', addToCollection(`Kill'em All`,'Metallica','1983',kEA));
+console.log('Adding first album:', addToCollection('Rust in Peace','Megadeth','1990',rIP));
+console.log('Adding first album:', addToCollection('The Mantle','Agalloch','2002',tM));
+console.log('Adding first album:', addToCollection('Details','Frou Frou','2002',details));
 
 // Log my collection to the console
 console.log('My record collection:', collection);
