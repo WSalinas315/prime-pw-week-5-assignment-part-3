@@ -25,11 +25,11 @@ function addToCollection(title, artist, yearPublished, trackList){
 
 // Adding 6 albums to my collection
 console.log('Adding first album:', addToCollection('Master of Puppets','Metallica','1986',mOP));
-console.log('Adding first album:', addToCollection('Sour','Olivia Rodrigo','2021',sour));
-console.log('Adding first album:', addToCollection(`Kill'em All`,'Metallica','1983',kEA));
-console.log('Adding first album:', addToCollection('Rust in Peace','Megadeth','1990',rIP));
-console.log('Adding first album:', addToCollection('The Mantle','Agalloch','2002',tM));
-console.log('Adding first album:', addToCollection('Details','Frou Frou','2002',details));
+console.log('Adding second album:', addToCollection('Sour','Olivia Rodrigo','2021',sour));
+console.log('Adding third album:', addToCollection(`Kill'em All`,'Metallica','1983',kEA));
+console.log('Adding fourth album:', addToCollection('Rust in Peace','Megadeth','1990',rIP));
+console.log('Adding fifth album:', addToCollection('The Mantle','Agalloch','2002',tM));
+console.log('Adding sixth album:', addToCollection('Details','Frou Frou','2002',details));
 
 // Log my collection to the console
 console.log('My record collection:', collection);
